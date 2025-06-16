@@ -1,5 +1,6 @@
 /**
 * SU-03T語音辨識晶片積木
+* SU-03T语音识别积木模块
 */
 
 //% weight=0 color=#439409 icon="\uf130" block="SU-03T ASR"
@@ -13,53 +14,53 @@ namespace su03t {
     let secondCommandCode=0
  
     export enum voiceCommand {
-        //% block="喚醒詞"
+        //% block="唤醒词"
         command00 = 0x00,
-        //% block="打開電燈"
+        //% block="打开电灯"
         command01 = 0x01,
-        //% block="關閉電燈"
+        //% block="关闭电灯"
         command02 = 0x02,
-        //% block="打開繼電器"
+        //% block="打开继电器"
         command03 = 0x03,
-        //% block="關閉繼電器"
+        //% block="关闭继电器"
         command04 = 0x04,
-        //% block="打開開關"
+        //% block="打开开关"
         command05 = 0x05,
-        //% block="關閉開關"
+        //% block="关闭开关"
         command06 = 0x06,
-        //% block="亮一點"
+        //% block="亮一点"
         command07 = 0x07,
-        //% block="暗一點"
+        //% block="暗一点"
         command08 = 0x08,
-        //% block="啟動功能"
+        //% block="启动功能"
         command2D = 0x2D,
-        //% block="關閉功能"
+        //% block="关闭功能"
         command2E = 0x2E,
-        //% block="打開"
+        //% block="打开"
         command2F = 0x2F,
-        //% block="關閉"
+        //% block="关闭"
         command30 = 0x30,
-        //% block="前進"
+        //% block="前进"
         command0B = 0x0B,
-        //% block="後退"
+        //% block="后退"
         command0C = 0x0C,
-        //% block="左轉"
+        //% block="左转"
         command0D = 0x0D,
-        //% block="右轉"
+        //% block="右转"
         command0E = 0x0E,
         //% block="停止"
         command0F = 0x0F,
-        //% block="開啟鏡頭"
+        //% block="开启镜头"
         command10 = 0x10,
-        //% block="關閉鏡頭"
+        //% block="关闭镜头"
         command11 = 0x11,
-        //% block="快一點"
+        //% block="快一点"
         command12 = 0x12,
-        //% block="慢一點"
+        //% block="慢一点"
         command13 = 0x13,
-        //% block="播放音樂"
+        //% block="播放音乐"
         command15 = 0x15,
-        //% block="暫停播放"
+        //% block="暂停播放"
         command16 = 0x16,
         //% block="停止播放"
         command17 = 0x17,
@@ -69,19 +70,19 @@ namespace su03t {
         command19 = 0x19,
         //% block="第一首"
         command1A = 0x1A,
-        //% block="最後一首"
+        //% block="最后一首"
         command1B = 0x1B,
-        //% block="紅色"
+        //% block="红色"
         command1F = 0x1F,
-        //% block="綠色"
+        //% block="绿色"
         command20 = 0x20,
-        //% block="藍色"
+        //% block="蓝色"
         command21 = 0x21,
         //% block="黃色"
         command22 = 0x22,
         //% block="青色"
         command23 = 0x23,
-        //% block="洋紅色"
+        //% block="洋红色"
         command24 = 0x24,
         //% block="紫色"
         command27 = 0x27,
@@ -89,31 +90,31 @@ namespace su03t {
         command25 = 0x25,
         //% block="黑色"
         command26 = 0x26,
-        //% block="溫度"
+        //% block="温度"
         command29 = 0x29,
-        //% block="濕度"
+        //% block="湿度"
         command2A = 0x2A,
         //% block="亮度"
         command2B = 0x2B,
-        //% block="距離"
+        //% block="距离"
         command2C = 0x2C,
-        //% block="顯示圖片"
+        //% block="显示图片"
         command33 = 0x33,
-        //% block="下一張圖"
+        //% block="下一张图"
         command34 = 0x34,
-        //% block="上一張圖"
+        //% block="上一张图"
         command35 = 0x35,
-        //% block="清除螢幕"
+        //% block="清楚荧幕"
         command36 = 0x36
     }
     export enum numberCommand {
-        //% block="溫度"
+        //% block="温度"
         command02 = 0x02,
-        //% block="濕度"
+        //% block="湿度"
         command03 = 0x03,
         //% block="亮度"
         command04 = 0x04,
-        //% block="距離"
+        //% block="距离"
         command05 = 0x05
     }
     export enum floatCommand {
@@ -123,61 +124,61 @@ namespace su03t {
         command07 = 0x07
     }
     export enum systemCommand {
-        //% block="喚醒"
+        //% block="唤醒"
         command01 = 1,
-        //% block="進入睡眠"
+        //% block="进入睡眠"
         command14 = 14,
-        //% block="靜音"
+        //% block="静音"
         command08 = 8,
-        //% block="取消靜音"
+        //% block="取消静音"
         command09 = 9,
         //% block="最大音量"
         command10 = 10,
         //% block="最小音量"
         command11 = 11,
-        //% block="大聲一點"
+        //% block="大声一点"
         command12 = 12,
-        //% block="小聲一點"
+        //% block="小声一点"
         command13 = 13
     }
     export enum preCommand {
-        //% block="歡迎光臨"
+        //% block="欢迎光临"
         command15 = 15,
         //% block="有人入侵"
         command16 = 16,
-        //% block="做得太好了，繼續加油"
+        //% block="做得太好了，继续加油"
         command17 = 17,
-        //% block="時間到了，該起床了"
+        //% block="时间到了，该起床了"
         command18 = 18,
-        //% block="溫度太高了"
+        //% block="温度太高了"
         command19 = 19,
-        //% block="溫度太低了"
+        //% block="温度太低了"
         command20 = 20,
-        //% block="光線太亮了"
+        //% block="光线太亮了"
         command21 = 21,
-        //% block="光線太暗了"
+        //% block="光线太暗了"
         command22 = 22,
-        //% block="我愛你"
+        //% block="我爱你"
         command23 = 23,
-        //% block="祝你生日快樂"
+        //% block="祝你生日快乐"
         command24 = 24,
-        //% block="這個資料不太正常"
+        //% block="这个资料不太正常"
         command25 = 25,
-        //% block="速度太慢了，請加速"
+        //% block="速度太慢了，请加速"
         command26 = 26,
-        //% block="速度太快了，請注意安全"
+        //% block="速度太快了，请注意安全"
         command27 = 27,
-        //% block="前方有障礙物"
+        //% block="前方有障碍物"
         command28 = 28,
-        //% block="魔鏡魔鏡，誰是世界上最美的人"
+        //% block="魔镜魔镜，谁是世界上最美的人"
         command29 = 29,
-        //% block="煙霧超標"
+        //% block="烟雾超标"
         command30 = 30,
-        //% block="瓦斯超標"
+        //% block="瓦斯超标"
         command31 = 31,
-        //% block="人體感應偵測觸發"
+        //% block="人体感应侦测触发"
         command32 = 32,
-        //% block="請注意安全，走廊上不要跑步"
+        //% block="请注意安全，走廊上不要跑步"
         command33 = 33
     }
     //% blockId="su03t_setSerial" block="SU-03T initial|B6 connect to %pinTX|B7 connect to %pinRX"
