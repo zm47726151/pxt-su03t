@@ -1,7 +1,7 @@
 {
     "name": "su03t",
     "version": "0.0.1",
-    "description": "這是專為micro:bit提供的SU-03T語音辨識積木",
+    "description": "这是专为micro:bit提供的SU-03T语音识别模块",
     "license": "MIT",
     "dependencies": {
         "core": "*"
