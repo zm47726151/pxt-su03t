@@ -220,7 +220,7 @@ namespace su03t {
         sendBuff.setNumber(NumberFormat.UInt8LE, 0, 0xAA);
         sendBuff.setNumber(NumberFormat.UInt8LE, 1, 0x55);
         sendBuff.setNumber(NumberFormat.UInt8LE, 2, myCommand);
-        sendBuff.setNumber(NumberFormat.Int32LE, 2, myNum);
+        sendBuff.setNumber(NumberFormat.Int32LE, 3, myNum);
         sendBuff.setNumber(NumberFormat.UInt8LE, 5, 0x55);
         sendBuff.setNumber(NumberFormat.UInt8LE, 6, 0xAA);
         serial.writeBuffer(sendBuff)
