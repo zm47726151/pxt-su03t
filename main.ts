@@ -37,7 +37,7 @@ namespace su03t {
         command2E = 0x2E,
         //% block="开门"
         command2F = 0x2F,
-        //% block="闭门"
+        //% block="关门"
         command30 = 0x30,
         //% block="前进"
         command0B = 0x0B,
