@@ -219,6 +219,7 @@ namespace su03t {
     export function su03tSpeakSomething(myCommand: numberCommand, myNum: number) {
         sendBuff.setNumber(NumberFormat.UInt8LE, 0, 0xAA);
         sendBuff.setNumber(NumberFormat.UInt8LE, 1, 0x55);
+        sendBuff.setNumber(NumberFormat.UInt8LE, 1, 0x02);
         sendBuff.setNumber(NumberFormat.UInt8LE, 2, myCommand);
         sendBuff.setNumber(NumberFormat.Int32LE, 3, myNum);
         sendBuff.setNumber(NumberFormat.UInt8LE, 5, 0x55);
@@ -231,8 +232,9 @@ namespace su03t {
         if (myCommand==0x06){
           sendBuff.setNumber(NumberFormat.UInt8LE, 0, 0xAA);
           sendBuff.setNumber(NumberFormat.UInt8LE, 1, 0x55);
-          sendBuff.setNumber(NumberFormat.UInt8LE, 2, myCommand);
-          sendBuff.setNumber(NumberFormat.Int32LE, 3, myNum);
+          sendBuff.setNumber(NumberFormat.UInt8LE, 2, 0x02);
+          sendBuff.setNumber(NumberFormat.UInt8LE, 3, myCommand);
+          sendBuff.setNumber(NumberFormat.Int32LE, 4, myNum);
           sendBuff.setNumber(NumberFormat.UInt8LE, 5, 0x55);
           sendBuff.setNumber(NumberFormat.UInt8LE, 6, 0xAA);
           serial.writeBuffer(sendBuff)
@@ -240,8 +242,9 @@ namespace su03t {
             let tempBuff=pins.createBuffer(11)
             tempBuff.setNumber(NumberFormat.UInt8LE, 0, 0xAA);
             tempBuff.setNumber(NumberFormat.UInt8LE, 1, 0x55);
-            tempBuff.setNumber(NumberFormat.UInt8LE, 2, myCommand);
-            tempBuff.setNumber(NumberFormat.Float64LE, 3,myNum)
+            tempBuff.setNumber(NumberFormat.UInt8LE, 2, 0x02);
+            tempBuff.setNumber(NumberFormat.UInt8LE, 3, myCommand);
+            tempBuff.setNumber(NumberFormat.Float64LE, 4,myNum)
             tempBuff.setNumber(NumberFormat.UInt8LE, 9, 0x55);
             tempBuff.setNumber(NumberFormat.UInt8LE, 10, 0xAA);
             serial.writeBuffer(tempBuff)
@@ -252,8 +255,9 @@ namespace su03t {
     export function su03tSystemCommand(myCommand: systemCommand) {
         sendBuff.setNumber(NumberFormat.UInt8LE, 0, 0xAA);
         sendBuff.setNumber(NumberFormat.UInt8LE, 1, 0x55);
-        sendBuff.setNumber(NumberFormat.UInt8LE, 2, myCommand);
-        sendBuff.setNumber(NumberFormat.Int32LE, 3, 0);
+        sendBuff.setNumber(NumberFormat.UInt8LE, 2, 0x01);
+        sendBuff.setNumber(NumberFormat.UInt8LE, 3, myCommand);
+        sendBuff.setNumber(NumberFormat.Int32LE, 4, 0);
         sendBuff.setNumber(NumberFormat.UInt8LE, 5, 0x55);
         sendBuff.setNumber(NumberFormat.UInt8LE, 6, 0xAA);
         serial.writeBuffer(sendBuff)
@@ -265,9 +269,10 @@ namespace su03t {
         let myTempBuff=pins.createBuffer(3)
         myTempBuff.setNumber(NumberFormat.UInt8LE, 0, 0xAA);
         myTempBuff.setNumber(NumberFormat.UInt8LE, 1, 0x55);
-        myTempBuff.setNumber(NumberFormat.UInt8LE, 2, myCommand);
-        myTempBuff.setNumber(NumberFormat.UInt8LE, 3, 0x55);
-        myTempBuff.setNumber(NumberFormat.UInt8LE, 4, 0xAA);
+        myTempBuff.setNumber(NumberFormat.UInt8LE, 2, 0x01);
+        myTempBuff.setNumber(NumberFormat.UInt8LE, 3, myCommand);
+        myTempBuff.setNumber(NumberFormat.UInt8LE, 4, 0x55);
+        myTempBuff.setNumber(NumberFormat.UInt8LE, 5, 0xAA);
         serial.writeBuffer(myTempBuff)
     }
 
