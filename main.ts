@@ -214,7 +214,7 @@ namespace su03t {
         return (firstCommandCode==0 && tempA == secondCommandCode )
     }
 
-    //% weight=70
+    //% weight=170
     //% blockId="su03tSpeakSomething" block="SU-03T read aloud %myfloatCommand|read aloud %myCommand|number %myNum"
     export function su03tSpeakSomething(myfloatCommand: floatCommand, myCommand: numberCommand, myNum: number) {
         if (myfloatCommand==0x06){
