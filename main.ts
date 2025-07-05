@@ -266,7 +266,7 @@ namespace su03t {
     //% weight=40
     //% blockId="su03tPreCommand" block="SU-03T read aloud %myCommand"
     export function su03tPreCommand(myCommand: preCommand) {
-        let myTempBuff=pins.createBuffer(3)
+        let myTempBuff=pins.createBuffer(6)
         myTempBuff.setNumber(NumberFormat.UInt8LE, 0, 0xAA);
         myTempBuff.setNumber(NumberFormat.UInt8LE, 1, 0x55);
         myTempBuff.setNumber(NumberFormat.UInt8LE, 2, 0x01);
