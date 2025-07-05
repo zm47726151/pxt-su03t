@@ -215,9 +215,9 @@ namespace su03t {
     }
 
     //% weight=70
-    //% blockId="su03tSpeakSomething" block="SU-03T read aloud %myCommand|integer %myNum"
-    export function su03tSpeakSomething(floatCommand: floatCommand, myCommand: numberCommand, myNum: number) {
-        if (floatCommand==0x06){
+    //% blockId="su03tSpeakSomething" block="SU-03T read aloud %myfloatCommand|%myCommand|number %myNum"
+    export function su03tSpeakSomething(myfloatCommand: floatCommand, myCommand: numberCommand, myNum: number) {
+        if (myfloatCommand==0x06){
           sendBuff.setNumber(NumberFormat.UInt8LE, 0, 0xAA);
           sendBuff.setNumber(NumberFormat.UInt8LE, 1, 0x55);
           sendBuff.setNumber(NumberFormat.UInt8LE, 2, 0x02);
@@ -226,7 +226,7 @@ namespace su03t {
           sendBuff.setNumber(NumberFormat.UInt8LE, 5, 0x55);
           sendBuff.setNumber(NumberFormat.UInt8LE, 6, 0xAA);
           serial.writeBuffer(sendBuff)
-        } else if (floatCommand==0x07){
+        } else if (myfloatCommand==0x07){
             let tempBuff=pins.createBuffer(13)
             tempBuff.setNumber(NumberFormat.UInt8LE, 0, 0xAA);
             tempBuff.setNumber(NumberFormat.UInt8LE, 1, 0x55);
