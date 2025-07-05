@@ -215,7 +215,7 @@ namespace su03t {
     }
 
     //% weight=70
-    //% blockId="su03tSpeakSomething" block="SU-03T read aloud %myfloatCommand|%myCommand|number %myNum"
+    //% blockId="su03tSpeakSomething" block="SU-03T read aloud %myfloatCommand|read aloud %myCommand|number %myNum"
     export function su03tSpeakSomething(myfloatCommand: floatCommand, myCommand: numberCommand, myNum: number) {
         if (myfloatCommand==0x06){
           sendBuff.setNumber(NumberFormat.UInt8LE, 0, 0xAA);
