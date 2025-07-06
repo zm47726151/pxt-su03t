@@ -5,7 +5,7 @@
     "su03t.su03tSetSerial|block": "SU-03T初始化|B6连接到 %pinTX|B7连接到 %pinRX",
     "su03t.su03tEvent|block": "SU-03T当听到语音指令时",
     "su03t.su03tCommandList|block": "听到语音指令%myCommand？",
-    "su03t.su03tSpeakSomething|block": "SU-03T传送数字%myfloatCommand|到晶片并念出%myCommand|数值%myNum",
+    "su03t.su03tSpeakSomething|block": "SU-03T传送数字到晶片并念出%myCommand|数值%myNum",
     "su03t.su03tSpeakFloat|block": "SU-03T传送数字到晶片并念出%myCommand|数值%myNum",
     "su03t.su03tSystemCommand|block": "SU-03T执行系統指令%myCommand",
     "su03t.su03tPreCommand|block": "SU-03T芯片念出%myCommand"
