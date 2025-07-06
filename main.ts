@@ -214,29 +214,18 @@ namespace su03t {
         return (firstCommandCode==0 && tempA == secondCommandCode )
     }
 
-    //% weight=170
-    //% blockId="su03tSpeakSomething" block="SU-03T read aloud %myfloatCommand|read aloud %myCommand|number %myNum"
-    export function su03tSpeakSomething(myfloatCommand: floatCommand, myCommand: numberCommand, myNum: number) {
-        if (myfloatCommand==0x06){
-          sendBuff.setNumber(NumberFormat.UInt8LE, 0, 0xAA);
-          sendBuff.setNumber(NumberFormat.UInt8LE, 1, 0x55);
-          sendBuff.setNumber(NumberFormat.UInt8LE, 2, 0x02);
-          sendBuff.setNumber(NumberFormat.UInt8LE, 3, myCommand);
-          sendBuff.setNumber(NumberFormat.Int32LE, 4, myNum);
-          sendBuff.setNumber(NumberFormat.UInt8LE, 5, 0x55);
-          sendBuff.setNumber(NumberFormat.UInt8LE, 6, 0xAA);
-          serial.writeBuffer(sendBuff)
-        } else if (myfloatCommand==0x07){
-            let tempBuff=pins.createBuffer(13)
-            tempBuff.setNumber(NumberFormat.UInt8LE, 0, 0xAA);
-            tempBuff.setNumber(NumberFormat.UInt8LE, 1, 0x55);
-            tempBuff.setNumber(NumberFormat.UInt8LE, 2, 0x02);
-            tempBuff.setNumber(NumberFormat.UInt8LE, 3, myCommand);
-            tempBuff.setNumber(NumberFormat.Float64LE, 4,myNum)
-            tempBuff.setNumber(NumberFormat.UInt8LE, 11, 0x55);
-            tempBuff.setNumber(NumberFormat.UInt8LE, 12, 0xAA);
-            serial.writeBuffer(tempBuff)
-        } 
+    //% weight=70
+    //% blockId="su03tSpeakSomething" block="SU-03T read aloud %myCommand|integer %myNum"
+    export function su03tSpeakSomething(myCommand: numberCommand, myNum: number) {
+        let tempBuff=pins.createBuffer(13)
+        tempBuff.setNumber(NumberFormat.UInt8LE, 0, 0xAA);
+        tempBuff.setNumber(NumberFormat.UInt8LE, 1, 0x55);
+        tempBuff.setNumber(NumberFormat.UInt8LE, 2, 0x02);
+        tempBuff.setNumber(NumberFormat.UInt8LE, 3, myCommand);
+        tempBuff.setNumber(NumberFormat.Float64LE, 4,myNum)
+        tempBuff.setNumber(NumberFormat.UInt8LE, 11, 0x55);
+        tempBuff.setNumber(NumberFormat.UInt8LE, 12, 0xAA);
+        serial.writeBuffer(tempBuff)
     }
     //% weight=60
     //% blockId="su03tSpeakFloat" block="SU-03T read aloud %myCommand|number %myNum"
