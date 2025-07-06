@@ -217,14 +217,14 @@ namespace su03t {
     //% weight=70
     //% blockId="su03tSpeakSomething" block="SU-03T read aloud %myCommand|integer %myNum"
     export function su03tSpeakSomething(myCommand: numberCommand, myNum: number) {
-        let tempBuff=pins.createBuffer(13)
+        let tempBuff=pins.createBuffer(14)
         tempBuff.setNumber(NumberFormat.UInt8LE, 0, 0xAA);
         tempBuff.setNumber(NumberFormat.UInt8LE, 1, 0x55);
         tempBuff.setNumber(NumberFormat.UInt8LE, 2, 0x02);
         tempBuff.setNumber(NumberFormat.UInt8LE, 3, myCommand);
         tempBuff.setNumber(NumberFormat.Float64LE, 4,myNum)
-        tempBuff.setNumber(NumberFormat.UInt8LE, 11, 0x55);
-        tempBuff.setNumber(NumberFormat.UInt8LE, 12, 0xAA);
+        tempBuff.setNumber(NumberFormat.UInt8LE, 12, 0x55);
+        tempBuff.setNumber(NumberFormat.UInt8LE, 13, 0xAA);
         serial.writeBuffer(tempBuff)
     }
     //% weight=60
